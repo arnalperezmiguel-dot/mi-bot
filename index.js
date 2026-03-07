@@ -14,6 +14,9 @@ function createBot() {
       setTimeout(() => bot.setControlState('jump', false), 150)
     }, 600)
   })
+
+  bot.on('end', () => setTimeout(createBot, 5000))
+  bot.on('error', () => setTimeout(createBot, 5000))
 }
 
 createBot()
