@@ -14,20 +14,6 @@ function createBot() {
       setTimeout(() => bot.setControlState('jump', false), 150)
     }, 600)
   })
-
-  bot.on('end', () => {
-    console.log('Reconectando en 5 segundos...')
-    setTimeout(createBot, 5000)
-  })
-
-  bot.on('error', () => setTimeout(createBot, 5000))
 }
 
 createBot()
-
-// Servidor HTTP para UptimeRobot
-const http = require('http')
-http.createServer((req, res) => {
-  res.write('Bot activo!')
-  res.end()
-}).listen(3000)
