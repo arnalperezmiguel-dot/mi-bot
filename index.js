@@ -12,7 +12,7 @@ function createBot1() {
     setInterval(() => {
       bot.setControlState('jump', true)
       setTimeout(() => bot.setControlState('jump', false), 150)
-    }, 1500)
+    }, 20000)
   })
 
   bot.on('end', () => setTimeout(createBot1, 5000))
@@ -37,7 +37,7 @@ function createBot2() {
         await bot.lookAt(bed.position.offset(0.5, 0.5, 0.5))
         bot.activateBlock(bed)
       }
-    }, 1000)
+    }, 20000)
   })
 
   bot.on('end', () => setTimeout(createBot2, 5000))
