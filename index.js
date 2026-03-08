@@ -4,7 +4,7 @@ function createBot1() {
   const bot = mineflayer.createBot({
     host: 'Piglin2012.aternos.me',
     port: 40624,
-    username: 'funcionaporfa',
+    username: 'BotSaltador123',
     version: '1.21.1'
   })
 
@@ -23,7 +23,7 @@ function createBot2() {
   const bot = mineflayer.createBot({
     host: 'Piglin2012.aternos.me',
     port: 40624,
-    username: 'funcionaporfa2',
+    username: 'BotClicker456',
     version: '1.21.1'
   })
 
