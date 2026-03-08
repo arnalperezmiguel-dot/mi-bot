@@ -12,7 +12,7 @@ function createBot1() {
     setInterval(() => {
       bot.setControlState('jump', true)
       setTimeout(() => bot.setControlState('jump', false), 150)
-    }, 600)
+    }, 1500)
   })
 
   bot.on('end', () => setTimeout(createBot1, 5000))
@@ -28,9 +28,16 @@ function createBot2() {
   })
 
   bot.on('spawn', () => {
-    setInterval(() => {
-      bot.activateItem()
-    }, 500)
+    setInterval(async () => {
+      const bed = bot.findBlock({
+        matching: block => bot.isABed(block),
+        maxDistance: 5
+      })
+      if (bed) {
+        await bot.lookAt(bed.position.offset(0.5, 0.5, 0.5))
+        bot.activateBlock(bed)
+      }
+    }, 1000)
   })
 
   bot.on('end', () => setTimeout(createBot2, 5000))
